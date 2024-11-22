@@ -31,6 +31,7 @@ def get_key():
     
     return key
 
+#encode one character 
 def encode_char(char,key):
 
     #using the building function to get the unicode
@@ -40,13 +41,13 @@ def encode_char(char,key):
     if 97 <= unicode <= 122:
         unicode = (unicode + key - 97)%26 + 97
         
-
     #detect if it is an upper case letter:
     if 65 <= unicode <= 90:
         unicode = (unicode + key - 65)%26 + 65
         
     return chr(unicode)
-        
+
+#main function of the module             
 def caesar(input_text, key):
 
     #double check the key is between -26 to 26
